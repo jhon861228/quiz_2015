@@ -1,0 +1,15 @@
+<%
+	for (var i = 0; i < preguntas.length; i++) {
+		
+%>
+
+	<form action="/quizes/respuesta" method="get">
+		<label for=""><%= preguntas[i].pregunta %></label>
+		<input type="text" name="respuesta">
+		<input type="hidden" name="pregunta" value="<%=preguntas[i].oculto%>">
+		<input type="submit" value="enviar">
+	</form>
+<%	
+}
+%>
+

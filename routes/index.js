@@ -21,6 +21,7 @@ router.get('/quizes/:quizId(\\d+)/respuesta',quiz_controller.respuesta);
 
 /* Créditos */
 router.get('/author', function(req,res){
+	
 	var descripcion = "Apasionado por la tecnología, lenguajes de programación y diseño web";
 	res.render('author',{imagen:"/images/pp.jpg",nombre:"Jhon Jairo Diaz Rueda",profesion:"Tecnólogo en sistemas",descripcion:descripcion});
 });

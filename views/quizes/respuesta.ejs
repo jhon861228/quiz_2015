@@ -1,1 +1,22 @@
-<%= respuesta %>
+<% 
+	if(respuesta == 'Correcto'){ 
+		var imagen = 'ok.png';
+		var ruta = '/quizes';
+		var boton = 'Lista de Quizes';
+	}else{
+		var imagen = 'mal.png';
+		var ruta = '/quizes/'+quizId;
+		var boton = 'Reintentar';
+	}
+%>
+<div class="jumbotron">
+	<div class="container">
+		<h1 class="text-center">
+			<%= respuesta %>
+		</h1>
+		
+		<img src="/images/<%=imagen%>" alt="" class="imagen_respuesta">
+		<a href="<%=ruta%>" class="btn btn-lg btn-primary"><%=boton%></a>
+
+	</div>
+</div>

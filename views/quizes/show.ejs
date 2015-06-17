@@ -1,0 +1,22 @@
+<div class="respuesta_pregunta">
+	<div class="col-md-6 col-md-offset-3">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<form action="/quizes/<%= quiz.id %>/respuesta" method="get" role="form">
+					<legend>Pregunta</legend>
+
+					<div class="form-group">
+						
+						<label for="respuesta"><%= quiz.pregunta %></label>
+						<input type="text" class="form-control" name="respuesta" id="respuesta" placeholder="Capital de Italia">
+					</div>
+
+					<button type="submit" class="btn btn-primary">Calificar</button>
+				</form>	   
+			</div>
+		</div>
+		
+
+	</div>
+</div>

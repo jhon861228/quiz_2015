@@ -53,7 +53,7 @@
 						</form>
 						<ul class="nav nav-pills nav-stacked">
 							<li><a href="/author">Créditos</a></li>
-							<li><a href="/quizes">Lista de preguntas</a></li>
+							<li><a href="/quizes">Lista de quizes</a></li>
 						</ul>
 						
 						
@@ -62,6 +62,17 @@
 			</div>
 			<div class="col-sm-9">
 				<div class="row contenido">
+					<% if(errors.length){ %>
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="alert alert-warning col-md-8 col-md-offset-2">
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+								<strong>Corregin errores</strong> <br>
+								<% for (var i in errors) {%>
+									<%=errors[i].message;%><br>
+								<%}%>
+							</div>
+						</div>
+					<%}%>
 					<%- body %>		
 				</div>
 				
@@ -79,5 +90,10 @@
 
 	<script src="/javascripts/jquery-2.1.4.min.js"></script>
 	<script src="/javascripts/bootstrap.min.js"></script>
+	<script>
+		$(function(){
+			$('[data-toggle="tooltip"]').tooltip()
+		});
+	</script>
 </body>
 </html>

@@ -9,7 +9,10 @@
 					<div class="form-group">
 						
 						<label for="respuesta"><%= quiz.pregunta %></label>
-						<input type="text" class="form-control" name="respuesta" id="respuesta" placeholder="Capital de Italia">
+						<span class="label label-primary" style="float:right;font-size:1.01em;">
+							<%=quiz.indice%>
+						</span>
+						<input type="text" class="form-control" name="respuesta" id="respuesta" placeholder="<%=quiz.pregunta%>">
 					</div>
 
 					<button type="submit" class="btn btn-primary">Calificar</button>

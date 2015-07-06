@@ -1,87 +1,27 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node',
-1 verbose cli   '/usr/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   '--save',
-1 verbose cli   'pg-hsore' ]
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'start' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.37
 4 verbose node symlink /usr/bin/node
-5 verbose readDependencies using package.json deps
-6 verbose cache add [ 'pg-hsore', null ]
-7 verbose cache add name=undefined spec="pg-hsore" args=["pg-hsore",null]
-8 verbose parsed url { protocol: null,
-8 verbose parsed url   slashes: null,
-8 verbose parsed url   auth: null,
-8 verbose parsed url   host: null,
-8 verbose parsed url   port: null,
-8 verbose parsed url   hostname: null,
-8 verbose parsed url   hash: null,
-8 verbose parsed url   search: null,
-8 verbose parsed url   query: null,
-8 verbose parsed url   pathname: 'pg-hsore',
-8 verbose parsed url   path: 'pg-hsore',
-8 verbose parsed url   href: 'pg-hsore' }
-9 silly lockFile 38c73be0-pg-hsore pg-hsore
-10 verbose lock pg-hsore /home/jhon/.npm/38c73be0-pg-hsore.lock
-11 silly lockFile 38c73be0-pg-hsore pg-hsore
-12 silly lockFile 38c73be0-pg-hsore pg-hsore
-13 verbose addNamed [ 'pg-hsore', '' ]
-14 verbose addNamed [ null, '*' ]
-15 silly lockFile 901056d7-pg-hsore pg-hsore@
-16 verbose lock pg-hsore@ /home/jhon/.npm/901056d7-pg-hsore.lock
-17 silly addNameRange { name: 'pg-hsore', range: '*', hasData: false }
-18 verbose request where is /pg-hsore
-19 verbose request registry https://registry.npmjs.org/
-20 verbose request id 631865d4290e8070
-21 verbose url raw /pg-hsore
-22 verbose url resolving [ 'https://registry.npmjs.org/', './pg-hsore' ]
-23 verbose url resolved https://registry.npmjs.org/pg-hsore
-24 verbose request where is https://registry.npmjs.org/pg-hsore
-25 info trying registry request attempt 1 at 11:19:20
-26 http GET https://registry.npmjs.org/pg-hsore
-27 http 404 https://registry.npmjs.org/pg-hsore
-28 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-28 verbose headers   'content-type': 'application/json',
-28 verbose headers   'cache-control': 'max-age=0',
-28 verbose headers   'content-length': '51',
-28 verbose headers   'accept-ranges': 'bytes',
-28 verbose headers   date: 'Mon, 15 Jun 2015 16:19:20 GMT',
-28 verbose headers   via: '1.1 varnish',
-28 verbose headers   age: '0',
-28 verbose headers   connection: 'keep-alive',
-28 verbose headers   'x-served-by': 'cache-jfk1025-JFK',
-28 verbose headers   'x-cache': 'MISS',
-28 verbose headers   'x-cache-hits': '0',
-28 verbose headers   'x-timer': 'S1434385160.625460,VS0,VE87' }
-29 silly registry.get cb [ 404,
-29 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-29 silly registry.get     'content-type': 'application/json',
-29 silly registry.get     'cache-control': 'max-age=0',
-29 silly registry.get     'content-length': '51',
-29 silly registry.get     'accept-ranges': 'bytes',
-29 silly registry.get     date: 'Mon, 15 Jun 2015 16:19:20 GMT',
-29 silly registry.get     via: '1.1 varnish',
-29 silly registry.get     age: '0',
-29 silly registry.get     connection: 'keep-alive',
-29 silly registry.get     'x-served-by': 'cache-jfk1025-JFK',
-29 silly registry.get     'x-cache': 'MISS',
-29 silly registry.get     'x-cache-hits': '0',
-29 silly registry.get     'x-timer': 'S1434385160.625460,VS0,VE87' } ]
-30 silly lockFile 901056d7-pg-hsore pg-hsore@
-31 silly lockFile 901056d7-pg-hsore pg-hsore@
-32 error 404 404 Not Found: pg-hsore
-32 error 404
-32 error 404 'pg-hsore' is not in the npm registry.
-32 error 404 You should bug the author to publish it
-32 error 404 It was specified as a dependency of 'quiz_2015'
-32 error 404
-32 error 404 Note that you can also install from a
-32 error 404 tarball, folder, or http url, or git url.
-33 error System Linux 3.13.0-54-generic
-34 error command "/usr/bin/node" "/usr/bin/npm" "install" "--save" "pg-hsore"
-35 error cwd /home/jhon/Documentos/DESARROLLO/nodejs/quiz_2015
-36 error node -v v0.10.37
-37 error npm -v 1.4.28
-38 error code E404
-39 verbose exit [ 1, true ]
+5 verbose run-script [ 'prestart', 'start', 'poststart' ]
+6 info prestart quiz_2015@0.0.0
+7 info start quiz_2015@0.0.0
+8 verbose unsafe-perm in lifecycle true
+9 info quiz_2015@0.0.0 Failed to exec start script
+10 error quiz_2015@0.0.0 start: `node ./bin/www`
+10 error Exit status 8
+11 error Failed at the quiz_2015@0.0.0 start script.
+11 error This is most likely a problem with the quiz_2015 package,
+11 error not with npm itself.
+11 error Tell the author that this fails on your system:
+11 error     node ./bin/www
+11 error You can get their info via:
+11 error     npm owner ls quiz_2015
+11 error There is likely additional logging output above.
+12 error System Linux 3.13.0-55-generic
+13 error command "/usr/bin/node" "/usr/bin/npm" "start"
+14 error cwd /home/jhon/Documentos/DESARROLLO/nodejs/quiz_2015
+15 error node -v v0.10.37
+16 error npm -v 1.4.28
+17 error code ELIFECYCLE
+18 verbose exit [ 1, true ]

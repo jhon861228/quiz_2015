@@ -1,0 +1,28 @@
+<div class="form-group">
+	<label for="pregunta">Pregunta</label>
+	<input type="text" class="form-control" id="pregunta" name="quiz[pregunta]" placeholder="Pregunta" value="<%=quiz.pregunta%>" placeholder="<%=quiz.pregunta%>">
+</div>
+<div class="form-group">
+	<label for="respuesta">Respuesta</label>
+	<input type="text" class="form-control" id="respuesta" name="quiz[respuesta]" placeholder="Respuesta" value="<%=quiz.respuesta%>" placeholder="<%=quiz.respuesta%>">
+</div>
+<div class="form-group">
+	<label for="indice">Indice temático</label>
+	<select id="indice" class="form-control" name="quiz[indice]" required="required">
+		<%
+			var indices = [
+						{value:'otro',text:'Otro'},
+						{value:'humanidades',text:'Humanidades'},
+						{value:'ocio',text:'Ocio'},
+						{value:'ciencia',text:'Ciencia'},
+						{value:'tecnologia',text:'Tecnología'}
+					];
+			for(i in indices){
+		%>
+			<option value="<%=indices[i].value%>" <%=(indices[i].value==quiz.indice)?'selected':''%>><%=indices[i].text%></option>
+			
+		<%}%>
+	</select>
+</div>
+<a class="btn btn-primary" href="/quizes">Cancelar</a>
+<button type="submit" class="btn btn-primary">Guardar</button>

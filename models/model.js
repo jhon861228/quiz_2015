@@ -33,19 +33,22 @@ sequelize.sync().then(function(){
 		if(count < 3){
 			Quiz.create({
 				pregunta:'Capital de Italia',
-				respuesta:'Roma'
+				respuesta:'Roma',
+				indice:'ocio'
 			}).then(function(){
 				console.log("Base de datos Creada");
 			});
 
 			Quiz.create({
 				pregunta:'Capital de Portugal',
-				respuesta:'Lisboa'
+				respuesta:'Lisboa',
+				indice:'ocio'
 			});
 
 			Quiz.create({
 				pregunta:'Quien descibrió América',
-				respuesta:'Cristóbal Colón'
+				respuesta:'Cristóbal Colón',
+				indice:'ocio'
 			});
 
 		}

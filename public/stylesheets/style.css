@@ -34,6 +34,18 @@ footer h1{
 	font-weight: bold;
 	background-color: rgb(88, 71, 153);
 }
+.item_categoria .list-group-item,.item_categoria .edit,.item_categoria .delete{
+	display: inline-block;
+}
+.item_categoria .list-group-item{
+	width: 80%;
+}
+.item_categoria .edit,.item_categoria .delete{
+	width: 9%;
+	font-size: 1em;
+	color: white;
+}
+
 .form-search{
 	margin-bottom: 20px;
 }

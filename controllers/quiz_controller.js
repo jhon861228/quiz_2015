@@ -3,7 +3,10 @@ var model = require('../models/model');
 
 exports.load = function(req,res,next,quizId){
 	
-	model.Quiz.findById(quizId).then(function(quiz){
+	model.Quiz.find({
+		where: {id:Number(quizId)},
+		include: [{model:model.Comment}]	
+	}).then(function(quiz){
 		if(quiz){
 			req.quiz = quiz;
 			next();

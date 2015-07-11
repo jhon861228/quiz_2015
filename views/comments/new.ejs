@@ -1,0 +1,10 @@
+<div class="col-md-6 col-md-offset-3" style="margin-bottom:20px;">
+	<a href="/" class="btn btn-success">Inicio</a>
+	<a href="/quizes" class="btn btn-success">Lista de preguntas</a>
+</div>
+<div class="col-md-6 col-md-offset-3">
+	<form action="/quizes/<%=quiz.id%>/comments" method="POST" class="form-horizontal" role="form">
+
+		<% include _form.ejs%>
+	</form>
+</div>

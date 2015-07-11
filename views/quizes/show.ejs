@@ -1,4 +1,7 @@
 <div class="respuesta_pregunta">
+	<div class="col-md-3 col-md-offset-9">
+		<a href="/quizes/<%=quiz.id%>/comments/new" class="btn btn-success">Nuevo comentario</a>
+	</div>
 	<div class="col-md-6 col-md-offset-3">
 
 		<div class="panel panel-default">
@@ -13,13 +16,35 @@
 							<%=quiz.indice%>
 						</span>
 						<input type="text" class="form-control" name="respuesta" id="respuesta" placeholder="<%=quiz.pregunta%>">
+
+						
 					</div>
 
 					<button type="submit" class="btn btn-primary">Calificar</button>
 				</form>	   
 			</div>
 		</div>
-		
+		<div class="comentarios">
+			
+
+			<div class="list-group">
+				<% for (indice in quiz.Comments){
+					if(quiz.Comments[indice].publicado || session.user){
+				%>
+					<div class="list-group-item default">
+						<div class="text_comment"><%=quiz.Comments[indice].texto%></div>
+
+						<% if(!quiz.Comments[indice].publicado && session.user){%>
+
+							<form class="publish_form" action="/quizes/<%=quiz.id%>/comments/<%=quiz.Comments[indice].id%>/publish/?_method=put" method="POST">
+								<button type="submit" class="boton-reset"><i class="fa fa-check-circle" style="color:#1BB32E;font-size:22px;" data-toggle="tooltip" data-placement="top" title="Publicar"></i></button>
+							</form>
+						<%}%>	
+					</div>
+					
+				<%} }%>	
+			</div>
+		</div>
 
 	</div>
 </div>

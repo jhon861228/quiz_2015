@@ -35,22 +35,30 @@
 					</div>
 				
 					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse navbar-ex1-collapse">
-						<form method="POST" action="" role="form">
+					<div class="collapse navbar-collapse navbar-ex1-collapse clear">
+						<% if(!session.user){%>
+						<form method="POST" action="/login" role="form">
 							<legend>Login</legend>
 					
 							<div class="form-group">
 								<label for="">Usuario</label>
-								<input type="text" class="form-control" id="" placeholder="Usuario">
+								<input type="text" name="login" class="form-control" id="" placeholder="Usuario">
 							</div>
 							<div class="form-group">
 								<label for="">Contraseña</label>
-								<input type="text" class="form-control" id="" placeholder="Contraseña">
+								<input type="password" class="form-control" name="password" id="" placeholder="Contraseña">
 							</div>
 							
 						
 							<button type="submit" class="btn btn-primary">Iniciar sesión</button>
 						</form>
+						<%}else{%>
+							<h4><span class="label label-default">Hola, <%=session.user.username%></span></h4>
+							<form method="POST" action="/logout/?_method=delete">
+								<button class="btn btn-primary">Cerrar sesión</button>
+							</form>
+							
+						<%}%>
 						<ul class="nav nav-pills nav-stacked">
 							<li><a href="/author">Créditos</a></li>
 							<li><a href="/quizes">Lista de quizes</a></li>

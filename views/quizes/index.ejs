@@ -1,10 +1,11 @@
 <h1 class="text-center">
 	Listado de Quizes
 </h1>
-<div class="col-md-4">
-	<a href="/quizes/new" class="btn btn-success">Nueva pregunta</a>	
-</div>
-
+<%if(session.user){%>
+	<div class="col-md-4">
+		<a href="/quizes/new" class="btn btn-success">Nueva pregunta</a>	
+	</div>
+<%}%>
 <div class="col-md-4 col-md-offset-4">
 
 	<form action="/quizes" method="get" class="form-inline form-search" role="form">
@@ -28,10 +29,13 @@
 			<% for(var i = 0;i<quizes.length;i++){%>
 				<div class="item_categoria">
 					<a href="/quizes/<%=quizes[i].id%>" class="list-group-item primary"><%=quizes[i].pregunta%></a>
+
+					<%if(session.user){%>
 					<a href="/quizes/<%=quizes[i].id%>/edit" class="edit btn btn-primary" ><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="Editar"></i></a>
 					<form class="delete" action="/quizes/<%=quizes[i].id%>?_method=delete" method="POST">
 						<button type="submit" onclick="return confirm('Borrar: <%=quizes[i].pregunta%>');" class="btn btn-danger"><i class="fa fa-trash-o" data-toggle="tooltip" data-placement="top" title="Borrar"></i></button>
 					</form>
+					<%}%>
 				</div> 
 			<%}%>
 		</div>

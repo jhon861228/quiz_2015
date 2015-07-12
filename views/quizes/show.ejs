@@ -10,28 +10,27 @@
 					<legend>Pregunta</legend>
 
 					<div class="form-group">
-						
+
 						<label for="respuesta"><%= quiz.pregunta %></label>
 						<span class="label label-primary" style="float:right;font-size:1.01em;">
 							<%=quiz.indice%>
 						</span>
 						<input type="text" class="form-control" name="respuesta" id="respuesta" placeholder="<%=quiz.pregunta%>">
 
-						
 					</div>
 
 					<button type="submit" class="btn btn-primary">Calificar</button>
-				</form>	   
+				</form>
 			</div>
 		</div>
 		<div class="comentarios">
-			
+
 
 			<div class="list-group">
 				<% for (indice in quiz.Comments){
 					if(quiz.Comments[indice].publicado || session.user){
 				%>
-					<div class="list-group-item default">
+					<div class="list-group-item default <%=(!quiz.Comments[indice].publicado && session.user)?'despublicado':'publicado'%>">
 						<div class="text_comment"><%=quiz.Comments[indice].texto%></div>
 
 						<% if(!quiz.Comments[indice].publicado && session.user){%>
@@ -39,10 +38,10 @@
 							<form class="publish_form" action="/quizes/<%=quiz.id%>/comments/<%=quiz.Comments[indice].id%>/publish/?_method=put" method="POST">
 								<button type="submit" class="boton-reset"><i class="fa fa-check-circle" style="color:#1BB32E;font-size:22px;" data-toggle="tooltip" data-placement="top" title="Publicar"></i></button>
 							</form>
-						<%}%>	
+						<%}%>
 					</div>
-					
-				<%} }%>	
+
+				<%} }%>
 			</div>
 		</div>
 

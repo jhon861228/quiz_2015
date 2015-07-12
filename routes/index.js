@@ -37,12 +37,14 @@ router.put('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish',session_con
 
 
 /*Rest estadisticas*/
-router.get('/stadistic',stadistic_controller.comments);
+
+router.get('/stadisticview',session_controller.loginRequired,stadistic_controller.index);
+router.get('/api/stadistic',stadistic_controller.stadistic);
 
 /*Rutas para la sesión*/
 router.get('/login',session_controller.new);
 router.post('/login',session_controller.create);
-router.delete('/logout',session_controller.destroy);
+router.get('/logout',session_controller.destroy);
 
 
 /* Créditos */

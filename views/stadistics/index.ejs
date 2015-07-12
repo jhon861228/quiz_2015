@@ -1,0 +1,74 @@
+<div class="col-md-6 col-md-offset-3" style="margin-bottom:20px">
+  <h1 class="text-center">Estadísticas</h1>
+</div>
+
+<div class="col-md-4">
+  <div class="panel panel-primary estadistica" id="tot_preg">
+    <div class="panel-heading">
+      <strong class="titulo">Total de preguntas</strong>
+    </div>
+    <div class="panel-body">
+      <h2></h2>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="panel panel-primary estadistica" id="tot_comen">
+    <div class="panel-heading">
+      <strong class="titulo">Total de comentarios</strong>
+    </div>
+    <div class="panel-body">
+      <h2></h2>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="panel panel-primary estadistica" id="med_comen">
+    <div class="panel-heading">
+      <strong class="titulo">Media de comentarios por pregunta</strong>
+    </div>
+    <div class="panel-body">
+      <h2></h2>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="panel panel-primary estadistica" id="no_comen">
+    <div class="panel-heading">
+      <strong class="titulo">Total de preguntas sin comentarios</strong>
+    </div>
+    <div class="panel-body">
+      <h2></h2>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="panel panel-primary estadistica" id="si_comen">
+    <div class="panel-heading">
+      <strong class="titulo">Total de preguntas con comentarios</strong>
+    </div>
+    <div class="panel-body">
+      <h2></h2>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    console.log("llegué");
+    $.get('/api/stadistic')
+    .done(function(data){
+      $("#tot_preg").find("h2").html(data.totales_quizes);
+      $("#tot_comen").find("h2").html(data.totales_comentarios);
+      $("#med_comen").find("h2").html(data.media_comentarios);
+      $("#si_comen").find("h2").html(data.totales_quizes_si_comment);
+      $("#no_comen").find("h2").html(data.totales_quizes_no_comment);
+      console.log(data);
+    });
+  });
+
+</script>

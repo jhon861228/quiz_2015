@@ -1,166 +1,215 @@
 .clear{
-	clear: both;
+	clear                          : both;
+}
+body{
+	background: rgb(250, 250, 250);
 }
 .container-fluid,body,html{
-	height: 100%;
-	max-height: 100%;
+	height                         : 100%;
+	max-height                     : 100%;
 }
 section{
-	height: 90%;
+	height                         : 100%;
 }
-footer{
-	height: 10%;
-	background: #434343;
-	color: white;
-}
-footer h1{
-	text-align: center;
-}
-.respuesta_pregunta legend{
-	color: black;
-}
-.respuesta_pregunta .panel-default{
-	background-color: rgb(232, 232, 232);
-}
-.imagen_respuesta{
-	width: 120px;
-	display: block;
-	margin: auto;
-}
-.list-group-item.primary{
-	color: white;
-	font-weight: bold;
-	background-color: rgb(104, 89, 160);
-}
-.list-group-item.default{
-	color: #242222;
-	font-weight: bold;
-	background-color: rgb(232, 232, 232);
-	border: #ACA9A9 1px solid;
-}
+.main{
+	position                       : relative;
+	height                         : 100%;
 
-.list-group-item.primary:hover,.list-group-item.primary:focus{
-	color: white;
-	font-weight: bold;
-	background-color: rgb(88, 71, 153);
-}
-.item_categoria .list-group-item,.item_categoria .edit,.item_categoria .delete{
-	display: inline-block;
-}
-.item_categoria .list-group-item{
-	width: 80%;
-}
-.item_categoria .edit,.item_categoria .delete{
-	width: 9%;
-	font-size: 1em;
-	color: white;
-}
-.text_comment,.publish_form{
-	display: inline-block;
-	vertical-align: middle;
-}
-.text_comment{
-	width: 90%;
-}
-.publish_form{
-	width: 9%;
-}
-.form-search{
-	margin-bottom: 20px;
-}
-.boton-reset:focus{
-	outline: none;
-}
-.boton-reset{
-	padding: 0;
-	margin: 0;
-	border: 0;
-	background: transparent;
-	-webkit-transition: .2s all;
-	-moz-transition: .2s all;
-	-o-transition: .2s all;
-	transition: .2s all;
-}
-.boton-reset:hover{
-	-webkit-transform: scale(1.3);
-	-moz-transform: scale(1.3);
-	-o-transform: scale(1.3);
-	transform: scale(1.3);
-}
-legend{
-	color: white;
-}
-#sidebar{
-	background: #534292;
-	color: white;
-	height: 100%;
-	max-height: 100%;
-	overflow-y: auto;
-}
-.nav-pills > li > a{
-	color: white;
-    background-color: rgb(51, 122, 183);
-}
-.nav > li > a:hover, .nav > li > a:focus{
-	background-color: #1462A5;
 }
 .contenido{
-	padding-top: 30px;
+	min-height                     : 90%;
+	padding-top                    : 30px;
+
 }
+footer{
+	height                         : 10%;
+	background                     : #434343;
+	color                          : white;
+}
+footer h1{
+	text-align                     : center;
+}
+.respuesta_pregunta legend{
+	color                          : black;
+}
+.respuesta_pregunta .panel-default{
+	background-color               : rgb(232, 232, 232);
+}
+.imagen_respuesta{
+	width                          : 120px;
+	display                        : block;
+	margin                         : auto;
+}
+.list-group-item{
+	margin-top                     : 10px;
+}
+.list-group-item.primary{
+	color                          : white;
+	font-weight                    : bold;
+	background-color               : rgb(104, 89, 160);
+}
+.list-group-item.primary:hover,.list-group-item.primary:focus{
+	color: white;
+	background-color               : rgb(121, 104, 182);
+}
+.list-group-item.default{
+	color                          : #242222;
+	font-weight                    : bold;
+	background-color               : rgb(232, 232, 232);
+	/*border                       : #ACA9A9 1px solid;*/
+}
+.list-group-item.publicado{
+	border-top                     : #4cae4c 3px solid;
+}
+.list-group-item.despublicado{
+	border-top                     : #f0ad4e 3px solid;
+}
+.list-group-item.primary         :hover,.list-group-item.primary:focus{
+	color                          : white;
+	font-weight                    : bold;
+	background-color               : rgb(88, 71, 153);
+}
+.item_categoria .list-group-item,.item_categoria .edit,.item_categoria .delete{
+	display                        : inline-block;
+}
+.item_categoria .list-group-item{
+	width                          : 80%;
+}
+.item_categoria .edit,.item_categoria .delete{
+	width                          : 9%;
+	font-size                      : 1em;
+	color                          : white;
+}
+.estadistica strong{
+	font-size: 1.4em;
+}
+.estadistica h2{
+	text-align: center;
+}
+.text_comment,.publish_form{
+	display                        : inline-block;
+	vertical-align                 : middle;
+}
+.text_comment{
+	width                          : 90%;
+}
+.publish_form{
+	width                          : 9%;
+}
+.form-search{
+	margin-bottom                  : 20px;
+}
+.boton-reset                     :focus{
+	outline                        : none;
+}
+.boton-reset{
+	padding                        : 0;
+	margin                         : 0;
+	border                         : 0;
+	background                     : transparent;
+	-webkit-transition             : .2s all;
+	-moz-transition                : .2s all;
+	-o-transition                  : .2s all;
+	transition                     : .2s all;
+}
+.boton-reset                     :hover{
+	-webkit-transform              : scale(1.3);
+	-moz-transform                 : scale(1.3);
+	-o-transform                   : scale(1.3);
+	transform                      : scale(1.3);
+}
+legend{
+	color                          : white;
+}
+#sidebar{
+	background                     : #534292;
+	color                          : white;
+	height                         : 100%;
+	max-height                     : 100%;
+	overflow-y                     : auto;
+}
+.nav-pills > li > a{
+	color                          : white;
+  background-color             : rgb(51, 122, 183);
+}
+.nav > li > a:hover, .nav > li > a:focus{
+	background-color             : rgb(66, 138, 199);
+}
+.nav > li > a                    :hover, .nav > li > a:focus{
+	background-color               : #1462A5;
+}
+
 .logo{
-	display: table;
-	margin: auto;
+	display                        : table;
+	margin                         : auto;
 }
 .logo .img{
-	margin-right: 20px;
-	font-size: 40px;
+	margin-right                   : 20px;
+	font-size                      : 40px;
 }
 .logo .img,.logo h2{
-	display: inline-block;
+	display                        : inline-block;
 }
 .navbar-collapse .nav{
-	margin-top:20px;
-	padding-top: 10px;
-	border-top: 1px solid white;
+	margin-top                     :20px;
+	padding-top                    : 10px;
+	border-top                     : 1px solid white;
 }
 a {
-  color: #00B7FF;
+  color                          : #00B7FF;
 }
 .autor{
-	width: 70%;
-	margin: auto;
-	margin-top:50px;
-	text-align: center;
-	padding: 10px;
-	background: #E1E0E0;
-	box-shadow: 2px 2px 2px #ccc;
+	width                          : 70%;
+	margin                         : auto;
+	margin-top                     :50px;
+	text-align                     : center;
+	padding                        : 10px;
+	background                     : #E1E0E0;
+	box-shadow                     : 2px 2px 2px #ccc;
 }
 .autor img{
-	width: 100px;
-	border-radius: 50%;
-	display: block;
-	margin: auto;
+	width                          : 100px;
+	border-radius                  : 50%;
+	display                        : block;
+	margin                         : auto;
 }
 footer h3{
-	display: inline-block;
-	width: 49%;
-	text-align: center;
+	display                        : inline-block;
+	width                          : 49%;
+	text-align                     : center;
 }
 @media only screen and (max-width: 768px){
-	
+
+	.logo{
+		height                       : 100%;
+	}
+	.logo h2{
+		margin-top                   : 15px;
+	}
+	.logo .img, .logo h2{
+		vertical-align               : middle;
+	}
 	.container-fluid,body,html{
-		height: auto;
-		max-height: auto;
+		min-height                   : 100%;
+
 	}
 	section{
-		height: auto;
+		min-height                   : 100%;
 	}
-	footer{
-		height: auto;
-		
+
+	footer,#sidebar{
+		height                       : auto;
+
 	}
 	.navbar-collapse .form-group{
-		display: inline-block;
-		width: 49%;
+		display                      : inline-block;
+		width                        : 49%;
 	}
+	.navbar-collapse{
+		margin-bottom                : 10px;
+	}
+	.navbar{
+		margin-bottom                : 0;
+	}
+
 }

@@ -8,15 +8,10 @@ var partials = require('express-partials');
 var session = require('express-session');
 var methodOverride = require('method-override');
 var routes = require('./routes/index');
-var fs = require('fs');
-var https = require('https');
-
-var options ={
-  key: fs.readFileSync('cert/quiz-2015-key.pem').toString(),
-  cert:fs.readFileSync('cert/quiz-2015-cert.pem').toString()
-};
 
 var app = express();
+
+var sessionTime = new Date();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,19 +33,34 @@ app.use(session());
 
 
 app.use(function(req, res, next){
-  
+
 
   // si no existe lo inicializa
   if (!req.session.redir) {
     req.session.redir = '/';
   }
   // guardar path en session.redir para despues de login
-  if (!req.path.match(/\/login|\/logout|\/user/)) {
+  if (!req.path.match(/\/login|\/logout|\/user|\/api/)) {
     req.session.redir = req.path;
   }
 
   // Hacer visible req.session en las vistas
   res.locals.session = req.session;
+  next();
+});
+
+app.use(function(req,res,next){
+
+  if(req.session.user){
+
+    if((new Date() - sessionTime)>120000){
+      res.redirect('/logout');
+      console.log("cierre de session "+ (new Date() - sessionTime));
+    }
+  }
+
+
+  sessionTime = new Date();
   next();
 });
 
